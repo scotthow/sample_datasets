@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision Tree Diagram</title>
+    <style>
+        .tree ul {
+            padding-top: 20px;
+            position: relative;
+            transition: all 0.5s;
+            display: flex;
+            justify-content: center;
+        }
+        .tree li {
+            padding: 5px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        .tree li::before, .tree li::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 50%;
+            border-top: 1px solid #ccc;
+            width: 50%;
+            height: 20px;
+        }
+        .tree li::after {
+            right: auto;
+            left: 50%;
+            border-left: 1px solid #ccc;
+        }
+        .tree li:only-child::after, .tree li:only-child::before {
+            display: none;
+        }
+        .tree li:only-child {
+            padding-top: 0;
+        }
+        .tree li:first-child::before, .tree li:last-child::after {
+            border: 0 none;
+        }
+        .tree li:last-child::before {
+            border-right: 1px solid #ccc;
+            border-radius: 0 5px 0 0;
+        }
+        .tree li:first-child::after {
+            border-radius: 5px 0 0 0;
+        }
+        .tree ul ul::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            border-left: 1px solid #ccc;
+            width: 0;
+            height: 20px;
+        }
+        .tree li span {
+            border: 1px solid #ccc;
+            padding: 5px 10px;
+            text-align: center;
+            display: inline-block;
+            border-radius: 5px;
+            position: relative;
+            top: 1px;
+        }
+        .tree ul ul li span {
+            top: 21px;
+        }
+    </style>
+</head>
+<body>
+    <div class="tree">
+        <ul>
+            <li>
+                <span>Feature 1</span>
+                <ul>
+                    <li>
+                        <span>Feature 2</span>
+                        <ul>
+                            <li><span>Class A</span></li>
+                            <li><span>Class B</span></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>Feature 3</span>
+                        <ul>
+                            <li><span>Class C</span></li>
+                            <li><span>Class D</span></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
+
